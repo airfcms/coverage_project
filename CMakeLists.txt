@@ -12,7 +12,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
-    #include(CodeCoverage)
+    include(CodeCoverage)
 endif()
 
 
@@ -25,4 +25,4 @@ set(COVERAGE_PROJECT_SOURCE_FILES ${coverage_project_SRCS} CACHE STRING "Project
 
 add_executable (coverage_project ${coverage_project_SRCS})
 
-#add_subdirectory( ${CMAKE_CURRENT_SOURCE_DIR}/tests )
+add_subdirectory( ${CMAKE_CURRENT_SOURCE_DIR}/src )
